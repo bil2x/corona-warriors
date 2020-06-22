@@ -1,7 +1,7 @@
 <?php
-$query = require 'bootstrap.php';
-require 'Task.php';
+require 'core/bootstrap.php';
+// var_dump($_SERVER['DOCUMENT_ROOT']);
+// die();
+$router = new Router;
 
-$tasks = $query->selectAll('todos', 'Task');
-
-require 'index.view.php';
+require Router::load('routes.php')->direct(Request::uri());
