@@ -1,5 +1,5 @@
 <?php
-require('./views/partials/header.php');
+require('partials/header.php');
 ?>
 <ul>
 
@@ -28,5 +28,5 @@ require('./views/partials/header.php');
     <button>Add</button>
 </form>
 <?php
-require('./views/partials/footer.php');
+require('partials/footer.php');
 ?>

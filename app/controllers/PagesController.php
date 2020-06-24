@@ -1,10 +1,15 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Models\Project;
+
 class PagesController
 {
     public function home()
     {
-        return view('index');
+        $project_list = Project::all();
+        return view('index', compact('project_list'));
     }
 
     public function about()
