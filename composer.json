@@ -2,6 +2,9 @@
     "autoload": {
         "classmap": [
             "./"
+        ],
+        "files": [
+            "app/Helpers.php"
         ]
     }
 }
