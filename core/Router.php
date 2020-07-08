@@ -36,7 +36,7 @@ class Router
             );
         }
 
-        throw new Exception('No routes defined for this URI');
+        throw new \Exception('No routes defined for this URI');
     }
 
     protected function callAction($controller, $action)
@@ -44,7 +44,7 @@ class Router
         $controller = "App\\Controllers\\{$controller}";
         $controller = new $controller;
         if (!method_exists($controller, $action)) {
-            throw new Exception(
+            throw new \Exception(
                 "{$controller} does not respond to the {$action} action."
             );
         }
