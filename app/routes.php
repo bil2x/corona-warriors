@@ -6,3 +6,12 @@ $router->get('contact', 'PagesController@contact');
 
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');
+
+$router->get('admin', 'AdminController@login');
+$router->post('admin', 'AdminController@logincheck');
+$router->get('admin/logout', 'AdminController@logout');
+
+
+$router->get('admin/home', 'AdminController@index');
+$router->get('admin/users', 'AdminController@users');
+$router->get('admin/posts', 'AdminController@posts');

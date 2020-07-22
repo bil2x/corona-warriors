@@ -1,0 +1,105 @@
+html, body{
+    height: 100%;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+}
+.center-location{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    padding:5px;
+    border: 1px solid #e3e3e3;
+    width: 400px;
+}
+.box h2{
+    text-align: center;
+}
+.control{
+    display: flex;
+    padding:.8em;    
+}
+
+.control > *{
+    border: 1px solid #e3e3e3;
+    flex:1;
+}
+.control input {
+    text-align: center;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.primary-button{
+    background-color: aqua;
+    cursor: pointer;
+}
+
+.admin-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    justify-content: space-between;
+}
+.admin-container header,footer{
+    background-color: aqua;
+    height: 40px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.admin-content{
+    display: flex;
+   margin-bottom: auto;
+   flex:1
+}
+
+@media screen and (max-width: 768px){
+    .admin-content{
+        flex-direction: column-reverse;
+    }
+}
+.list-item{
+    list-style: none;
+   padding: 5px 0px;
+}
+
+.left-side{
+    background-color: #5D79FF;    
+    padding: 20px;
+}
+.right-side {
+    padding: 20px;
+    flex:1;
+}
+.left-side nav ul{
+    margin: 0px;
+    padding: 0px;
+}
+.list-item a{
+    text-decoration: none;
+    color: white;
+}
+.list-item a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
+.form-location{
+    height: 100%;
+    display: flex;   
+    justify-content: center;
+}
+
+.form-box{
+    padding:5px;
+    border: 1px solid #e3e3e3;
+    width: 100%;
+}
+.form-box h2{
+    text-align: center;
+}
