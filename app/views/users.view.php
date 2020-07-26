@@ -27,6 +27,9 @@ require('partials/header.php');
     <input type="text" name="name" id="">
     <button>Add</button>
 </form>
+
+<h1><?=base64_encode('password');?></h1>
+<h1><?=base64_decode('cGFzc3dvcmQ=');?></h1>
 <?php
 require('partials/footer.php');
 ?>

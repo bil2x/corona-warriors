@@ -17,6 +17,7 @@ class ComposerStaticInite0f7e1dba682b8816619c7c3c38c5805
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
+        'App\\Models\\Admin\\Users' => __DIR__ . '/../..' . '/app/models/admin/Users.php',
         'App\\Models\\Project' => __DIR__ . '/../..' . '/app/models/Project.php',
         'ComposerAutoloaderInite0f7e1dba682b8816619c7c3c38c5805' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',

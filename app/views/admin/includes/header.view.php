@@ -11,22 +11,25 @@
 <body>
     <div class="admin-container">
         <header>
-            Admin Display
+            <h2 style="margin: 0px;">
+                Official Usage Area
+            </h2>
+
         </header>
         <div class="admin-content">
             <div class="left-side">
                 <nav>
                     <ul>
-                        <li class="list-item">
+                        <li class="list-item <?php if (route() == 'admin/home') echo 'active' ?>">
                             <a href="home">Dashboard</a>
                         </li>
-                        <li class="list-item">
-                            <a href="users">Users</a>
+                        <li class="list-item <?php if (route() == 'admin/users') echo 'active' ?>"">
+                            <a href=" users">Users</a>
                         </li>
-                        <li class="list-item">
-                            <a href="posts">Post</a>
+                        <li class="list-item <?php if (route() == 'admin/posts') echo 'active' ?>"">
+                            <a href=" posts">Post</a>
                         </li>
-                        <li class="list-item">
+                        <li class=" list-item">
                             <a href="logout">Logout</a>
                         </li>
                     </ul>

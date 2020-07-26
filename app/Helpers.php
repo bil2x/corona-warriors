@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\Request;
+
 function view($name, $data = [])
 {
     extract($data);
@@ -18,7 +20,15 @@ function dd($var)
 }
 
 
-function request($var)
+function request($var = '')
 {
-    return $_REQUEST[$var];
+    if (!empty($var))
+        return $_REQUEST[$var];
+
+    return $_REQUEST;
+}
+
+function route()
+{
+    return Request::uri();
 }

@@ -28,8 +28,9 @@ class QueryBuilder
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute($parameters);
+            return 1;
         } catch (Exception $e) {
-            echo $e->getmessage();
+            return $e->getmessage();
         }
     }
 }

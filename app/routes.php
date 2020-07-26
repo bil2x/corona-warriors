@@ -13,5 +13,8 @@ $router->get('admin/logout', 'AdminController@logout');
 
 
 $router->get('admin/home', 'AdminController@index');
+
 $router->get('admin/users', 'AdminController@users');
+$router->post('admin/users', 'AdminController@store');
+
 $router->get('admin/posts', 'AdminController@posts');
