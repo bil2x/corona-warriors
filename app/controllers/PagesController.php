@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Article;
 use App\Models\Project;
 
 class PagesController
@@ -14,7 +15,8 @@ class PagesController
 
     public function about()
     {
-        return view('about');
+        $articles = Article::all();
+        return view('about', ['articles' => $articles]);
     }
 
     public function contact()

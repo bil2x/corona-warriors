@@ -4,6 +4,8 @@ $router->get('', 'PagesController@home');
 $router->get('about', 'PagesController@about');
 $router->get('contact', 'PagesController@contact');
 
+$router->get('article/{article}', 'ArticlesController@show');
+
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');
 
@@ -18,3 +20,4 @@ $router->get('admin/users', 'AdminController@users');
 $router->post('admin/users', 'AdminController@store');
 
 $router->get('admin/posts', 'AdminController@posts');
+dd($router);
