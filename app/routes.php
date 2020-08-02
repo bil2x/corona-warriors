@@ -4,7 +4,8 @@ $router->get('', 'PagesController@home');
 $router->get('about', 'PagesController@about');
 $router->get('contact', 'PagesController@contact');
 
-$router->get('articles', 'ArticlesController@show');
+$router->get('articles', 'ArticlesController@index');
+$router->get('article', 'ArticlesController@show');
 
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');
