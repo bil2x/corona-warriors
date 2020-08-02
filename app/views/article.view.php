@@ -1,9 +1,10 @@
 <?php require('partials/header.view.php'); ?>
 <div id="wrapper">
     <div id="page" class="container">
+
         <div id="content">
             <div class="title">
-                <h2>Welcome to our website</h2>
+                <h2><?= $article->title ?></h2>
                 <span class="byline">Mauris vulputate dolor sit amet nibh</span>
             </div>
             <p><img src="public/images/banner.jpg" alt="" class="image image-full" /> </p>
@@ -11,36 +12,7 @@
             <p>Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. Fusce odio. Etiam arcu dui, faucibus eget, placerat vel, sodales eget, orci. Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis at, ultricies quis, justo. Donec nonummy magna quis risus. Quisque eleifend. Phasellus tempor vehicula justo.</p>
             <p>Donec condimentum, urna non molestie semper, ligula enim ornare nibh, quis laoreet eros quam eget ante. Aliquam libero. Vivamus nisl nibh, iaculis vitae, viverra sit amet, ullamcorper vitae, turpis. Aliquam erat volutpat. Vestibulum dui sem, pulvinar sed, imperdiet nec, iaculis nec, leo. Fusce odio. Etiam arcu dui, faucibus eget, placerat vel, sodales eget, orci. Donec ornare neque ac sem. Mauris aliquet. Aliquam sem leo, vulputate sed, convallis at, ultricies quis, justo. Donec nonummy magna quis risus. Quisque eleifend. Phasellus tempor vehicula justo.</p>
         </div>
-        <div id="sidebar">
-            <ul class="style1">
-                <?php foreach ($articles as $article) : ?>
-                    <li class="first">
-                        <h3><a href="articles?id=<?= $article->id ?>"><?= $article->title; ?></a></h3>
-                        <p><?= $article->excerpt; ?></p>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-            <div id="stwo-col">
-                <div class="sbox1">
-                    <h2>Etiam rhoncus</h2>
-                    <ul class="style2">
-                        <li><a href="#">Semper quis egetmi dolore</a></li>
-                        <li><a href="#">Quam turpis feugiat dolor</a></li>
-                        <li><a href="#">Amet ornare hendrerit lectus</a></li>
-                        <li><a href="#">Quam turpis feugiat dolor</a></li>
-                    </ul>
-                </div>
-                <div class="sbox2">
-                    <h2>Integer gravida</h2>
-                    <ul class="style2">
-                        <li><a href="#">Semper quis egetmi dolore</a></li>
-                        <li><a href="#">Quam turpis feugiat dolor</a></li>
-                        <li><a href="#">Consequat lorem phasellus</a></li>
-                        <li><a href="#">Amet turpis feugiat amet</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 <?php require('partials/footer.view.php'); ?>

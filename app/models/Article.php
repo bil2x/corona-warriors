@@ -10,4 +10,11 @@ class Article
     {
         return App::get('database')->selectAll('articles');
     }
+
+    public static function fetch(array $col)
+    {
+        $column = array_key_first($col);
+        [$column => $val] = $col;
+        return App::get('database')->select('articles', $column, $val);
+    }
 }

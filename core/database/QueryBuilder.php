@@ -15,7 +15,14 @@ class QueryBuilder
 
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
+    public function select($table, $col, $val)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where {$col}={$val}");
 
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
     public function insert($table, $parameters)
     {
         $sql = sprintf(
