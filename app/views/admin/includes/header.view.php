@@ -26,8 +26,8 @@
                         <li class="list-item <?php if (route() == 'admin/users') echo 'active' ?>"">
                             <a href=" users">Users</a>
                         </li>
-                        <li class="list-item <?php if (route() == 'admin/posts') echo 'active' ?>"">
-                            <a href=" posts">Post</a>
+                        <li class="list-item <?php if (route() == 'admin/articles') echo 'active' ?>"">
+                            <a href=" articles">Articles</a>
                         </li>
                         <li class=" list-item">
                             <a href="logout">Logout</a>

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Admin\Users;
+use App\Models\Article;
 
 class AdminController
 {
@@ -75,9 +76,14 @@ class AdminController
     }
 
 
-    public function posts()
+    public function articles()
     {
-        return view('admin/posts');
+        if (!isset($_SESSION['id'])) {
+            redirect('admin');
+        }
+        return view('admin/articles', [
+            'articles' => Article::all()
+        ]);
     }
 
     public function logout()

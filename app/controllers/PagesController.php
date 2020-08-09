@@ -23,4 +23,8 @@ class PagesController
     {
         return view('contact');
     }
+    public function clients()
+    {
+        return view('clients');
+    }
 }

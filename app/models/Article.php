@@ -17,4 +17,17 @@ class Article
         [$column => $val] = $col;
         return App::get('database')->select('articles', $column, $val);
     }
+    public static function create($data)
+    {
+        return App::get('database')->insert('articles', $data);
+    }
+    public static function update($data, $where)
+    {
+        //dd($data);
+        return App::get('database')->update('articles', $data, $where);
+    }
+    public static function delete($id)
+    {
+        return App::get('database')->delete('articles', $id);
+    }
 }

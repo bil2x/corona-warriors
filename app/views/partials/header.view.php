@@ -1,3 +1,6 @@
+<?php
+//session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -21,10 +24,10 @@
             <div id="menu">
                 <ul>
                     <li class="<?php echo (route() == '') ? 'current_page_item' : ''; ?>"><a href="/" accesskey="1" title="">Homepage</a></li>
-                    <li class="<?php echo (route() == 'clients') ? 'current_page_item' : ''; ?>"><a href=" clients" accesskey="2" title="">Our Clients</a></li>
-                    <li class="<?php echo (route() == 'about') ? 'current_page_item' : ''; ?>"><a href="about" accesskey="3" title="">About Us</a></li>
-                    <li class="<?php echo (route() == 'articles') ? 'current_page_item' : ''; ?>"><a href=" articles" accesskey="4" title="">Articles</a></li>
-                    <li class="<?php echo (route() == 'contact') ? 'current_page_item' : ''; ?>"><a href=" contact" accesskey="5" title="">Contact Us</a></li>
+                    <li class="<?php echo (route() == 'clients') ? 'current_page_item' : ''; ?>"><a href="/clients" accesskey="2" title="">Our Clients</a></li>
+                    <li class="<?php echo (route() == 'about') ? 'current_page_item' : ''; ?>"><a href="/about" accesskey="3" title="">About Us</a></li>
+                    <li class="<?php echo (route() == 'articles') ? 'current_page_item' : ''; ?>"><a href="/articles" accesskey="4" title="">Articles</a></li>
+                    <li class="<?php echo (route() == 'contact') ? 'current_page_item' : ''; ?>"><a href="/contact" accesskey="5" title="">Contact Us</a></li>
                 </ul>
             </div>
         </div>

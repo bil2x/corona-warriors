@@ -13,18 +13,15 @@ function redirect($path)
     header("Location:/{$path}");
 }
 
-
 function dd($var)
 {
     die(var_dump($var));
 }
 
-
 function request($var = '')
 {
     if (!empty($var))
         return $_REQUEST[$var];
-
     return $_REQUEST;
 }
 
