@@ -13,6 +13,7 @@ class Users
 
     public static function all()
     {
+        //dd('model');
         return App::get('database')->selectAll('users');
     }
 }

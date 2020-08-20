@@ -27,7 +27,7 @@
                     <li class="<?php echo (route() == 'clients') ? 'current_page_item' : ''; ?>"><a href="/clients" accesskey="2" title="">Our Clients</a></li>
                     <li class="<?php echo (route() == 'about') ? 'current_page_item' : ''; ?>"><a href="/about" accesskey="3" title="">About Us</a></li>
                     <li class="<?php echo (route() == 'articles') ? 'current_page_item' : ''; ?>"><a href="/articles" accesskey="4" title="">Articles</a></li>
-                    <li class="<?php echo (route() == 'contact') ? 'current_page_item' : ''; ?>"><a href="/contact" accesskey="5" title="">Contact Us</a></li>
+                    <li class="<?php echo (route() == 'login') ? 'current_page_item' : ''; ?>"><a href="/login" accesskey="5" title="">Login</a></li>
                 </ul>
             </div>
         </div>

@@ -13,7 +13,13 @@ class ComposerStaticInite0f7e1dba682b8816619c7c3c38c5805
     public static $classMap = array (
         'App\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/controllers/AdminController.php',
         'App\\Controllers\\ArticlesController' => __DIR__ . '/../..' . '/app/controllers/ArticlesController.php',
+        'App\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/controllers/LoginController.php',
+        'App\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/controllers/RegisterController.php',
+        'App\\Controllers\\Auth\\ResetController' => __DIR__ . '/../..' . '/app/controllers/ResetController.php',
+        'App\\Controllers\\LoginController' => __DIR__ . '/../..' . '/app/controllers/auth/LoginController.php',
         'App\\Controllers\\PagesController' => __DIR__ . '/../..' . '/app/controllers/PagesController.php',
+        'App\\Controllers\\RegisterController' => __DIR__ . '/../..' . '/app/controllers/auth/RegisterController.php',
+        'App\\Controllers\\ResetController' => __DIR__ . '/../..' . '/app/controllers/auth/ResetController.php',
         'App\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/controllers/UsersController.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',

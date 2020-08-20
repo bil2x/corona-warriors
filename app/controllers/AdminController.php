@@ -72,6 +72,7 @@ class AdminController
         }
 
         $users = Users::all();
+        //dd($users);
         return view('admin/users', compact('users'));
     }
 

@@ -9,8 +9,18 @@ class QueryBuilder
     }
     public function selectAll($table)
     {
-        $statement = $this->pdo->prepare("select * from {$table} order by `created_at` desc");
-        $statement->execute();
+        //dd('select all');
+        try {
+            $statement = $this->pdo->prepare("select * from {$table} order by `created_at` desc");
+            $statement->execute();
+        } catch (Exception $e) {
+
+            //dd($e->getmessage());
+
+            return $e->getmessage();
+        }
+
+
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
     public function select($table, $col, $val)

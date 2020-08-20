@@ -1,5 +1,9 @@
 <?php
 
+$router->get('login','LoginController@show');
+$router->get('register','RegisterController@show');
+$router->get('reset','ResetController@show');
+
 $router->get('', 'PagesController@home');
 $router->get('about', 'PagesController@about');
 $router->get('contact', 'PagesController@contact');
@@ -30,3 +34,6 @@ $router->get('admin/users', 'AdminController@users');
 $router->post('admin/users', 'AdminController@store');
 
 $router->get('admin/articles', 'AdminController@articles');
+
+
+//dd($router);
