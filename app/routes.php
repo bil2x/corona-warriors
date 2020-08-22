@@ -1,8 +1,11 @@
 <?php
 
-$router->get('login','LoginController@show');
-$router->get('register','RegisterController@show');
-$router->get('reset','ResetController@show');
+$router->get('login', 'Auth\LoginController@create');
+
+$router->get('register', 'Auth\RegisterController@create');
+$router->post('register', 'Auth\RegisterController@store');
+
+$router->get('reset', 'Auth\ResetController@create');
 
 $router->get('', 'PagesController@home');
 $router->get('about', 'PagesController@about');

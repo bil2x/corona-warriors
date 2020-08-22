@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Auth;
 
 class ResetController
 {
 
-	public function show()
+	public function create()
 	{
 		return view('auth/reset');
 	}

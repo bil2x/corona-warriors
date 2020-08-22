@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Controllers;
+namespace App\Controllers\Auth;
 
 /**
  * 
  */
 class LoginController
 {
-	
-	
-	public function show()
+
+
+	public function create()
 	{
-	
+
 		return view('auth/login');
 	}
 }

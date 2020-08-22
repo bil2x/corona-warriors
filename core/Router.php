@@ -28,20 +28,18 @@ class Router
 
     public function direct($uri, $requestType)
     {
-
         if (array_key_exists($uri, $this->routes[$requestType])) {
-
             return $this->callAction(
                 ...explode("@", $this->routes[$requestType][$uri])
             );
         }
-
         throw new \Exception('No routes defined for this URI');
     }
 
     protected function callAction($controller, $action)
     {
         $controller = "App\\Controllers\\{$controller}";
+        //dd($controller);
         $controller = new $controller;
         if (!method_exists($controller, $action)) {
             throw new \Exception(
