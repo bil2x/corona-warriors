@@ -1,5 +1,4 @@
 <?php require('partials/header.view.php'); ?>
-
 <div id="header-featured">
     <div id="banner-wrapper">
         <div id="banner" class="container">

@@ -24,7 +24,7 @@ class ComposerStaticInite0f7e1dba682b8816619c7c3c38c5805
         'App\\Models\\Admin\\Users' => __DIR__ . '/../..' . '/app/models/admin/Users.php',
         'App\\Models\\Article' => __DIR__ . '/../..' . '/app/models/Article.php',
         'App\\Models\\Project' => __DIR__ . '/../..' . '/app/models/Project.php',
-        'App\\Models\\Users' => __DIR__ . '/../..' . '/app/models/User.php',
+        'App\\Models\\User' => __DIR__ . '/../..' . '/app/models/User.php',
         'ComposerAutoloaderInite0f7e1dba682b8816619c7c3c38c5805' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
         'Composer\\Autoload\\ComposerStaticInite0f7e1dba682b8816619c7c3c38c5805' => __DIR__ . '/..' . '/composer/autoload_static.php',

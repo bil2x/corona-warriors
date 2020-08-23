@@ -1,13 +1,18 @@
 <?php
 
 $router->get('login', 'Auth\LoginController@create');
+$router->post('login', 'Auth\LoginController@attemptLogin');
 
-$router->get('register', 'Auth\RegisterController@create');
+$router->get('login', 'Auth\LoginController@create');
+$router->get('logout', 'Auth\LoginController@destroy');
+
 $router->post('register', 'Auth\RegisterController@store');
 
 $router->get('reset', 'Auth\ResetController@create');
+$router->post('reset', 'Auth\ResetController@sendPasswordLink');
 
-$router->get('', 'PagesController@home');
+$router->get('home', 'PagesController@home');
+$router->get('', 'PagesController@index');
 $router->get('about', 'PagesController@about');
 $router->get('contact', 'PagesController@contact');
 

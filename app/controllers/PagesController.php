@@ -10,9 +10,13 @@ class PagesController
     public function home()
     {
         $project_list = Project::all();
-        return view('index', compact('project_list'));
+        return view('home', compact('project_list'));
     }
+    public function index()
+    {
 
+        return view('index');
+    }
     public function about()
     {
         $articles = Article::all();

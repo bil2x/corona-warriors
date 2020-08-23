@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Auth;
 
-use App\Models\Users;
+use App\Models\User;
 
 class RegisterController
 {
@@ -53,7 +53,7 @@ class RegisterController
 		//dd('ready to insert');
 		unset($form_data['password_confirmation']);
 		//dd($form_data);
-		$response = Users::create($form_data);
+		$response = User::create($form_data);
 		if ($response == 1) {
 			//dd($response);
 			redirect('login');

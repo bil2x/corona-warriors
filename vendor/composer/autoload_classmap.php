@@ -19,7 +19,7 @@ return array(
     'App\\Models\\Admin\\Users' => $baseDir . '/app/models/admin/Users.php',
     'App\\Models\\Article' => $baseDir . '/app/models/Article.php',
     'App\\Models\\Project' => $baseDir . '/app/models/Project.php',
-    'App\\Models\\Users' => $baseDir . '/app/models/User.php',
+    'App\\Models\\User' => $baseDir . '/app/models/User.php',
     'ComposerAutoloaderInite0f7e1dba682b8816619c7c3c38c5805' => $vendorDir . '/composer/autoload_real.php',
     'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
     'Composer\\Autoload\\ComposerStaticInite0f7e1dba682b8816619c7c3c38c5805' => $vendorDir . '/composer/autoload_static.php',

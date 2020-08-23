@@ -9,25 +9,36 @@ class QueryBuilder
     }
     public function selectAll($table)
     {
-        //dd('select all');
         try {
             $statement = $this->pdo->prepare("select * from {$table} order by `created_at` desc");
             $statement->execute();
-        } catch (Exception $e) {
-
-            //dd($e->getmessage());
-
+        } catch (PDOException $e) {
             return $e->getmessage();
         }
-
-
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
     public function select($table, $col, $val)
     {
-        $statement = $this->pdo->prepare("select * from {$table} where {$col}={$val}");
-        $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_CLASS);
+        try {
+            //dd("select * from {$table} where {$col}={$val}");
+            $statement = $this->pdo->prepare("select * from {$table} where {$col}='{$val}'");
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_CLASS);
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
+    public function query($string)
+    {
+        //dd($string);
+        try {
+            $statement = $this->pdo->prepare($string);
+            //dd($statement);
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_CLASS);
+        } catch (Exception $e) {
+            return $e->getmessage();
+        }
     }
     public function insert($table, $parameters)
     {
