@@ -6,6 +6,8 @@ $router->post('login', 'Auth\LoginController@attemptLogin');
 $router->get('login', 'Auth\LoginController@create');
 $router->get('logout', 'Auth\LoginController@destroy');
 
+
+$router->get('register', 'Auth\RegisterController@create');
 $router->post('register', 'Auth\RegisterController@store');
 
 $router->get('reset', 'Auth\ResetController@create');
