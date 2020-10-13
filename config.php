@@ -2,7 +2,7 @@
 
 return [
     'database' => [
-        'name' => 'test',
+        'name' => 'corona_story',
         'username' => 'root',
         'password' => 'password',
         'connection' => 'mysql:host=127.0.0.1',

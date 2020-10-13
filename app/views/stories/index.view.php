@@ -1,10 +1,4 @@
-<?php
-require('partials/header.view.php');
-?>
-<div class="banner">
-    <a href="/story/create/">
-        <img src="public/images/banner.jpg" alt=""></a>
-</div>
+<?php require(dirname(__DIR__) . '/partials/header.view.php'); ?>
 <main>
     <header>
         <h1>
@@ -19,17 +13,12 @@ require('partials/header.view.php');
             //dd($story);
         ?>
             <div class="item">
-                <img src="<?= $story->image; ?>" alt="" width="200" height="250">
+                <img src="<?= ltrim($story->image, '.'); ?>" alt="" width="200" height="250">
                 <p>Posted By <?= $story->name; ?></p>
                 <h2><?= $story->title; ?></h2>
             </div>
         <?php endforeach; ?>
     </div>
-    <footer>
-        <button><a href="/story/create/"> Stories </a></button>
-        <button><a href="/stories/">More Stories</a></button>
-    </footer>
 </main>
-<?php
-require('partials/footer.view.php');
-?>
+
+<?php require(dirname(__DIR__) . '/partials/footer.view.php'); ?>

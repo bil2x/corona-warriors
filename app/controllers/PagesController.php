@@ -2,27 +2,26 @@
 
 namespace App\Controllers;
 
-use App\Models\Article;
-use App\Models\Project;
+use App\Models\Story;
 
 class PagesController
 {
-    public function home()
-    {
-        $project_list = Project::all();
-        return view('home', compact('project_list'));
-    }
+
     public function index()
     {
-
-        return view('index');
+        $stories = Story::all();
+        //dd($stories);
+        return view('index', compact('stories'));
     }
-    public function about()
+    public function create()
     {
-        $articles = Article::all();
-        return view('about', ['articles' => $articles]);
+        return view('addstory');
     }
 
+    public function list()
+    {
+        return view('liststory');
+    }
     public function contact()
     {
         return view('contact');

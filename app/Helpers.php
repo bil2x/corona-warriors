@@ -24,7 +24,17 @@ function request($var = '')
         return $_REQUEST[$var];
     return $_REQUEST;
 }
-
+function file_request($var = '')
+{
+    if (!empty($var))
+        return $_FILES[$var];
+    return $_FILES;
+}
+function file_upload($src, $dest)
+{
+    $res = move_uploaded_file($src, $dest);
+    return $res;
+}
 function route()
 {
     return Request::uri();

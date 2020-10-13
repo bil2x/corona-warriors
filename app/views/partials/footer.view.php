@@ -1,5 +1,8 @@
-<div id="copyright" class="container">
-    <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+<footer>
+    <h5>Warrior</h5>
+    <p>All Rights Reserved</p>
+</footer>
+
 </div>
 </body>
 

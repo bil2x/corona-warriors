@@ -15,20 +15,20 @@ $router->post('reset', 'Auth\ResetController@sendPasswordLink');
 
 $router->get('home', 'PagesController@home');
 $router->get('', 'PagesController@index');
-$router->get('about', 'PagesController@about');
-$router->get('contact', 'PagesController@contact');
+//$router->get('create', 'StoriesController@create');
+$router->get('list', 'PagesController@list');
 
 $router->get('clients', 'PagesController@clients');
 
-$router->get('articles', 'ArticlesController@index');
-$router->get('article', 'ArticlesController@show');
-$router->get('article/create', 'ArticlesController@create');
-$router->post('article/create', 'ArticlesController@store');
+$router->get('stories', 'StoriesController@index');
+$router->get('story', 'StoriesController@show');
+$router->get('story/create', 'StoriesController@create');
+$router->post('story/create', 'StoriesController@store');
 
-$router->get('article/edit', 'ArticlesController@edit');
-$router->post('article/edit', 'ArticlesController@update');
+$router->get('story/edit', 'StoriesController@edit');
+$router->post('story/edit', 'StoriesController@update');
 
-$router->get('article/delete', 'ArticlesController@destroy');
+$router->get('story/delete', 'StoriesController@destroy');
 
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');

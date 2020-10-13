@@ -1,3 +1,173 @@
+html, body{
+	height: 100%;
+}
+h1, h2, p {
+	margin: 0;
+	padding: 0;
+}
+ a {
+	text-decoration:none;
+	color:inherit;	
+}
+nav  a:hover{
+	text-decoration: underline;
+	color:gray;
+}
 body{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+#container{
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	justify-content:space-between;
+}
+
+
+.logo-navigation{
+	display: flex;
+	justify-content: space-around;
+	padding: 20px 0;
+}
+.logo-navigation h1 {
+	margin: 0;
+	padding: 0;
+}
+.logo-navigation nav {
+	width: 500px;
+}
+.logo-navigation > nav ul{
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* .logo-navigation > nav ul li a{
+	text-decoration:none;
+	color:inherit;	
+} */
+/* nav ul li a:hover{
+	color:gray;
+} */
+.banner {
+	text-align: center;
+}
+.banner img{
+	width: 100%;
+}
+main{
+	margin: auto;
+	margin-top: 0px;
+	display: flex;
+	flex-direction: column;
+}
+main h1{
+	margin: 0px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2.571em;
+	line-height: 135%;
+}
+main strong{
+	display: block;
+}
+main .gcontainer{
+	display: grid;
+	grid-template-columns:250px 250px 250px 250px ;
+	grid-gap:1em;
+	padding: 15px 0;
+}
+.gcontainer .item{
+	text-align: center;
+	padding: 10px 0;
+	border: 1px solid gray;
+}
+main footer{
+padding: 20px;
+text-align: center;
+}
+main footer button{
+	    padding: 10px 13px;
+    border-radius: 5%;
+    background:#951495;
+    border: none;
+    color: white;
+	font-size: large;
+	cursor: pointer;
+}
+#container > footer{
+	text-align: center;
+	padding-bottom: 20px;
+	background:#c5c5c5;
+}
+/* for add story page */
+
+.box {
+	padding: 20px;
+	border: 1px solid #e3e3e3;
+	width: 700px;
+	margin-bottom: 1em;
+}
+.control:not(:last-child){
+	margin-bottom: 1em;
+}
+.control.has-addon {
+	display: flex;
+}
+
+.control.has-addon .control-field {
+	flex:1;
+	border: 1px solid #e3e3e3;
+}
+.control.has-addon .control-field:focus {
+	outline: 0;
+	border: 1px solid #00b1b3;
+	border-left: none;
+}
+
+.control.has-addon .control-field:focus + .control-addon {
+	border: 1px solid #00b1b3;
+	border-right: none;
+	/*animation: fadeColor 2s;
+	animation-iteration-count: infinite; */
+}
+.control.has-addon .control-addon{
+	background:#e3e3e3;
+	width:25%;
+	text-align: right;
+}
+
+.control > * {
+	padding: .8em;
+}
+.header{
+	background: #e3e3e3;
+    padding: 20px;
+    font-size: 20px;
+    color: teal;
+}
+.btn {
+    margin-left: 201px;
+    border-radius: 5%;
+    background: #0066ff;
+    color: white;
+    border: none;
+}
+/* @keyframes fadeColor {
+
+	50% {
+		color:#026c6d;
+	}
+	
+} */
+
+
+.current_page_item{
+
+	color:#951495;
+	font-weight: bold;
+ 
 }
