@@ -13,10 +13,10 @@ $router->post('register', 'Auth\RegisterController@store');
 $router->get('reset', 'Auth\ResetController@create');
 $router->post('reset', 'Auth\ResetController@sendPasswordLink');
 
-$router->get('home', 'PagesController@home');
+// $router->get('home', 'PagesController@home');
 $router->get('', 'PagesController@index');
 //$router->get('create', 'StoriesController@create');
-$router->get('list', 'PagesController@list');
+// $router->get('list', 'PagesController@list');
 
 $router->get('clients', 'PagesController@clients');
 

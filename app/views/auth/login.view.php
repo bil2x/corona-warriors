@@ -1,67 +1,43 @@
-<!DOCTYPE html>
-<html>
+<?php
+$page = 'Login';
+require(dirname(__DIR__) . '/partials/header.view.php');
+?>
+<main>
+    <header>
+        <h1>
+            <strong>CORONA</strong>
+            Warrior Stories
+        </h1>
+    </header>
+    <div class="form-body">
 
-<head>
-    <title>Login</title>
-</head>
-
-<body>
-    <main class="py-4">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header">Login</div>
-
-                        <div class="card-body">
-                            <form method="POST" action="login">
-                                <div class="form-group row">
-                                    <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-
-                                    <div class="col-md-6">
-                                        <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email" autofocus>
-
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                                    <div class="col-md-6">
-                                        <input id="password" type="password" class="form-control " name="password" required autocomplete="current-password">
-
-                                    </div>
-                                </div>
-
-                                <!-- <div class="form-group row">
-                                    <div class="col-md-6 offset-md-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" name="remember" id="remember">
-
-                                            <label class="form-check-label" for="remember">
-                                                Remember Me
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div> -->
-
-                                <div class="form-group row mb-0">
-                                    <div class="col-md-8 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            Login
-                                        </button>
-
-                                        <a class="btn btn-link" href="/reset">
-                                            Forgot Your Password?
-                                        </a>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+        <form action="/login" class="box" method="post">
+            <div class="control header">
+                LOGIN TO ADD YOUR STORY
             </div>
-        </div>
-</body>
+            <div class="control has-addon">
+                <span class="control-addon">
+                    E-Mail Address
+                </span>
+                <input type="email" class="control-field" placeholder="Email Address" required autocomplete="email" autofocus name="email">
 
-</html>
+            </div>
+            <div class="control has-addon">
+                <span class="control-addon">
+                    Password
+                </span>
+                <input type="password" class="control-field" placeholder="Password" name="password" required autocomplete="current-password">
+            </div>
+            <div class="control">
+                <input type="submit" class="control-field btn" placeholder="Submit" value="Submit">
+                <a href="/register">New User?</a>
+                <!-- <a class="btn btn-link" href="/reset">
+                    Forgot Your Password?
+                </a> -->
+            </div>
+        </form>
+    </div>
+</main>
+
+<?php require(dirname(__DIR__) . '/partials/footer.view.php');
+unset($_SESSION['error']);

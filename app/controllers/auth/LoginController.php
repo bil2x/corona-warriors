@@ -57,7 +57,7 @@ class LoginController
 		foreach ($res as $user);
 		//dd($user);
 		$_SESSION['current_user'] = $user;
-		redirect('home');
+		redirect('');
 	}
 
 	public function destroy()

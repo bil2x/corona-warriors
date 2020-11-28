@@ -1,79 +1,47 @@
-<!DOCTYPE html>
-<html>
+<?php require(dirname(__DIR__) . '/partials/header.view.php'); ?>
+<main>
+    <header>
+        <h1>
+            <strong>CORONA</strong>
+            Warrior Stories
+        </h1>
+    </header>
+    <div class="form-body">
 
-<head>
-    <title>Register</title>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-</head>
-
-<body>
-    <main class="py-4">
-        <div class="container">
-            <div class="flex justify-center">
-                <div class="flex-initial w-2/3">
-                    <div class="border-solid border-2 border-gray-500 flex flex-col rounded">
-                        <div class="px-3 py-5 bg-gray-300 border-b-2 border-solid border-orange-300 mb-0">Register</div>
-
-                        <div class="flex-auto p-5">
-                            <form method="POST" action="/register">
-
-                                <div class="flex flex-wrap mb-1 mx-12 justify-center">
-                                    <label for="name" class="text-right pr-2 grid-cols-6">Name</label>
-
-                                    <div class=" flex-initial border-2 border-red-500">
-                                        <input id="name" type="text" class="form-control " name="name" required autocomplete="name" autofocus>
-
-                                    </div>
-                                    <span class="help is-danger"><?php echo $_SESSION['error']['name'] ?? ''; ?></span>
-                                </div>
-
-                                <div class="flex flex-wrap mb-1 mx-12 justify-center">
-                                    <label for="email" class="text-right pr-2 grid-cols-6">E-Mail Address</label>
-
-                                    <div class=" flex-initial border-2 border-red-500">
-                                        <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email">
-
-                                    </div>
-                                    <span class="help is-danger"><?php echo $_SESSION['error']['email'] ?? ''; ?></span>
-                                </div>
-
-                                <div class="flex flex-wrap mb-1 mx-12 justify-center">
-                                    <label for="password" class="text-right pr-2 grid-cols-6">Password</label>
-
-                                    <div class=" flex-initial border-2 border-red-500">
-                                        <input id="password" type="password" class="form-control " name="password" required autocomplete="new-password">
-
-                                    </div>
-                                    <span class="help is-danger"><?php echo $_SESSION['error']['password'] ?? ''; ?></span>
-                                </div>
-
-                                <div class="flex flex-wrap mb-1 mx-12 justify-center">
-                                    <label for="password-confirm" class="text-right pr-2 grid-cols-6">Confirm Password</label>
-
-                                    <div class=" flex-initial border-2 border-red-500">
-                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                                    </div>
-                                    <span class="help is-danger"><?php echo $_SESSION['error']['password_confirmation'] ?? ''; ?></span>
-                                </div>
-
-                                <div class="flex flex-wrap mb-1 mx-12 justify-center mb-0">
-                                    <div class="">
-                                        <button type="submit" class="bg-blue-500 px-4 py-2 text-white hover:bg-blue-700">
-                                            Register
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+        <form action="/register" class="box" method="post">
+            <div class="control header">
+                REGISTER TO ADD, SHARE, COMMENT </div>
+            <div class="control has-addon">
+                <span class="control-addon"> Name </span>
+                <input type="text" class="control-field" placeholder="Name" name="name">
+                <span class="help is-danger"><?php echo $_SESSION['error']['name'] ?? ''; ?></span>
             </div>
-        </div>
-    </main>
-</body>
+            <div class="control has-addon">
+                <span class="control-addon"> E-Mail Address </span>
+                <input type="email" class="control-field" placeholder="Email Address" name="email">
+                <span class="help is-danger"><?php echo $_SESSION['error']['email'] ?? ''; ?></span>
+            </div>
+            <div class="control has-addon">
+                <span class="control-addon">
+                    Password
+                </span>
+                <input type="password" class="control-field" placeholder="Password" name="password">
+                <span class="help is-danger"><?php echo $_SESSION['error']['password'] ?? ''; ?></span>
+            </div>
+            <div class="control has-addon">
+                <span class="control-addon">
+                    Confirm Password
+                </span>
+                <input type="password" class="control-field" placeholder="Confirm Password" name="password_confirmation">
+                <span class="help is-danger"><?php echo $_SESSION['error']['password_confirmation'] ?? ''; ?></span>
+            </div>
+            <div class="control">
+                <input type="submit" class="control-field btn" placeholder="Submit" value="Submit">
+                <a href="/login">Already Register?</a>
+            </div>
+        </form>
+    </div>
+</main>
 
-</html>
-<?php
-
+<?php require(dirname(__DIR__) . '/partials/footer.view.php');
 unset($_SESSION['error']);
-?>
