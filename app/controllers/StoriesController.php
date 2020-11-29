@@ -15,9 +15,10 @@ class StoriesController
     }
     public function show()
     {
+        //dd($_REQUEST);
         $article = Story::fetch(['id' => request('id')]);
         //dd($article);
-        return view('stories/show', compact('story'));
+        return view('stories/show', compact('article'));
     }
 
     public function create()

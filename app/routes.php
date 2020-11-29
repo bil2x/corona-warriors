@@ -24,6 +24,7 @@ $router->get('stories', 'StoriesController@index');
 $router->get('story', 'StoriesController@show');
 $router->get('story/create', 'StoriesController@create');
 $router->post('story/create', 'StoriesController@store');
+// $router->get('story/{id}', 'StoriesController@show');
 
 $router->get('story/edit', 'StoriesController@edit');
 $router->post('story/edit', 'StoriesController@update');
@@ -33,6 +34,7 @@ $router->get('story/delete', 'StoriesController@destroy');
 $router->get('users', 'UsersController@index');
 $router->post('users', 'UsersController@store');
 
+// Admin Panel Routes
 $router->get('admin', 'AdminController@login');
 $router->post('admin', 'AdminController@logincheck');
 $router->get('admin/logout', 'AdminController@logout');
