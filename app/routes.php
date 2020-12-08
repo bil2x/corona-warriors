@@ -1,4 +1,5 @@
 <?php
+$router->get('', 'HomeController@index');
 
 $router->get('login', 'Auth\LoginController@create');
 $router->post('login', 'Auth\LoginController@attemptLogin');
@@ -12,13 +13,6 @@ $router->post('register', 'Auth\RegisterController@store');
 
 $router->get('reset', 'Auth\ResetController@create');
 $router->post('reset', 'Auth\ResetController@sendPasswordLink');
-
-// $router->get('home', 'PagesController@home');
-$router->get('', 'PagesController@index');
-//$router->get('create', 'StoriesController@create');
-// $router->get('list', 'PagesController@list');
-
-$router->get('clients', 'PagesController@clients');
 
 $router->get('stories', 'StoriesController@index');
 $router->get('story', 'StoriesController@show');
@@ -38,7 +32,6 @@ $router->post('users', 'UsersController@store');
 $router->get('admin', 'AdminController@login');
 $router->post('admin', 'AdminController@logincheck');
 $router->get('admin/logout', 'AdminController@logout');
-
 
 $router->get('admin/home', 'AdminController@index');
 
