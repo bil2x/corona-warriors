@@ -10,27 +10,27 @@ class StoriesController
     public function index()
     {
         $stories = Story::all();
-        //dd($stories);
         return view('stories/index', ['stories' => $stories]);
     }
     public function show()
     {
-        //dd($_REQUEST);
         $article = Story::fetch(['id' => request('id')]);
-        //dd($article);
         return view('stories/show', compact('article'));
     }
 
     public function create()
     {
-        return view('stories/create');
+        // dd($_SESSION['current_user']);
+        if (isset($_SESSION['current_user']) && !empty($_SESSION['current_user']))
+            return view('stories/create');
+        else
+            redirect('login');
     }
 
     public function store()
     {
         $form_data = request();
         $file_data = file_request('image');
-        //dd($file_data);
         //validation check start
         $field = [];
         foreach ($form_data as $key => $data) {
@@ -43,11 +43,9 @@ class StoriesController
             foreach ($field as $val) {
                 $_SESSION['error'][$val] = ucwords($val) . " field is required";
             }
-            //dd($_SESSION);
             redirect('stories/create');
         }
         // validation check end
-        //dd($form_data);
         //for file uploading start
         $uploaddir = './public/storage/images/';
         $uploadfile = $uploaddir . time() . '_' . basename($file_data['name']);
@@ -85,7 +83,6 @@ class StoriesController
     public function destroy()
     {
         $res = Story::delete(request('id'));
-        //dd($res);
         if ($res)
             redirect('stories/');
     }
