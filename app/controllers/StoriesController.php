@@ -64,8 +64,8 @@ class StoriesController
     }
     public function edit()
     {
-        $article = Story::fetch(['id' => request('id')]);
-        return view('stories/edit', compact('article'));
+        $story = Story::fetch(['id' => request('id')]);
+        return view('stories/edit', compact('story'));
     }
 
     public function update()

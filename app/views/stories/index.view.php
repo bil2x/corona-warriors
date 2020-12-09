@@ -12,7 +12,7 @@
         foreach ($stories as $story) :
             //dd($story);
         ?>
-            <a href="story?id=<?= $story->id; ?>">
+            <a href="/story?id=<?= $story->id; ?>">
                 <div class="item">
                     <img src="<?= ltrim($story->image, '.'); ?>" alt="" width="200" height="250">
                     <p>Posted By <?= $story->name; ?></p>

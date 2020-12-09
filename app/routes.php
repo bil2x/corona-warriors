@@ -7,7 +7,6 @@ $router->post('login', 'Auth\LoginController@attemptLogin');
 $router->get('login', 'Auth\LoginController@create');
 $router->get('logout', 'Auth\LoginController@destroy');
 
-
 $router->get('register', 'Auth\RegisterController@create');
 $router->post('register', 'Auth\RegisterController@store');
 
@@ -24,9 +23,6 @@ $router->get('story/edit', 'StoriesController@edit');
 $router->post('story/edit', 'StoriesController@update');
 
 $router->get('story/delete', 'StoriesController@destroy');
-
-$router->get('users', 'UsersController@index');
-$router->post('users', 'UsersController@store');
 
 // Admin Panel Routes
 $router->get('admin', 'AdminController@login');
