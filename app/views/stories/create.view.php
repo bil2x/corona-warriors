@@ -27,7 +27,7 @@
                 <span class="control-addon">
                     Add Images* (Maximum 4 images / Press 'ctrl' button to select multiple images)
                 </span>
-                <input type="file" name="image" class="control-field">
+                <input type="file" name="image_arr[]" class="control-field" multiple>
 
             </div>
             <div class="control has-addon">

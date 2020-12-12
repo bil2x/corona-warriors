@@ -52,7 +52,7 @@ class QueryBuilder
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute($parameters);
-            return 1;
+            return $this->pdo->lastInsertId();
         } catch (Exception $e) {
             return $e->getmessage();
         }

@@ -35,6 +35,14 @@ function file_upload($src, $dest)
     $res = move_uploaded_file($src, $dest);
     return $res;
 }
+
+function multi_file_upload($images)
+{
+    foreach ($images as $temp => $perm) {
+        $res[] = move_uploaded_file($temp, $perm);
+    }
+    return $res;
+}
 function route()
 {
     return Request::uri();

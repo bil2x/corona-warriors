@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Story;
+use App\Models\Image;
 
 class StoriesController
 {
@@ -32,7 +33,9 @@ class StoriesController
     public function store()
     {
         $form_data = request();
-        $file_data = file_request('image');
+        // dd($_FILES);
+        $file_data = file_request('image_arr');
+        //dd($file_data);
         //validation check start
         $field = [];
         foreach ($form_data as $key => $data) {
@@ -50,13 +53,24 @@ class StoriesController
         // validation check end
         //for file uploading start
         $uploaddir = './public/storage/images/';
-        $uploadfile = $uploaddir . time() . '_' . basename($file_data['name']);
-        $form_data['image'] = $uploadfile;
+        foreach ($file_data['name'] as $name) {
+            $uploadfile[] = $uploaddir . time() . '_' . basename($name);
+        }
+        $images = array_combine($file_data['tmp_name'], $uploadfile);
+        // dd($images);
+        // dd($uploadfile);
+        // dd(multi_file_upload($images));
 
-        file_upload($file_data['tmp_name'], $uploadfile);
-
+        multi_file_upload($images);
 
         $story = Story::create($form_data);
+        foreach ($uploadfile as $filepath) {
+            Image::create([
+                'location' => $filepath,
+                'story_id' => $story
+            ]);
+        }
+
 
         if ($story) {
             return redirect('stories', [
