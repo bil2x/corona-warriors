@@ -4,9 +4,6 @@ namespace App\Controllers\Auth;
 
 use App\Models\User;
 
-/**
- * 
- */
 class LoginController
 {
 	public function create()
@@ -16,8 +13,6 @@ class LoginController
 
 	function attemptLogin()
 	{
-		//dd(request());
-
 		$form_data = request();
 		//validation check start
 		$field = [];
@@ -31,7 +26,6 @@ class LoginController
 			foreach ($field as $val) {
 				$_SESSION['error'][$val] = ucwords($val) . " field is required";
 			}
-			//dd($_SESSION);
 			return redirect('register');
 		}
 		// email validation checking
@@ -44,18 +38,12 @@ class LoginController
 			$_SESSION['error']['password'] = "Password at least 8 characters long";
 			return redirect('register');
 		}
-		//dd('ready to check');
 		$res = User::check($form_data);
 		if (empty($res)) {
 			$_SESSION['error']['message'] = 'Your email or password invalid';
 			return redirect('login');
 		}
-		//dd($res);
-		// $res2  = array_map(function ($user) {
-		// 	return [$user->id, $user->name, $user->email];
-		// }, $res);
 		foreach ($res as $user);
-		//dd($user);
 		$_SESSION['current_user'] = $user;
 		redirect('');
 	}

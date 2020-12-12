@@ -47,3 +47,7 @@ function route()
 {
     return Request::uri();
 }
+function auth()
+{
+    return $_SESSION['current_user'];
+}

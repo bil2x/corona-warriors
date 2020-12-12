@@ -15,15 +15,12 @@ class StoriesController
     }
     public function show()
     {
-        // dd($_SESSION['current_user']->id);
         $article = Story::fetch(['id' => request('id')]);
-        //dd($article[0]->user_id);
         return view('stories/show', compact('article'));
     }
 
     public function create()
     {
-        // dd($_SESSION['current_user']->id);
         if (isset($_SESSION['current_user']) && !empty($_SESSION['current_user']))
             return view('stories/create');
         else
@@ -33,9 +30,8 @@ class StoriesController
     public function store()
     {
         $form_data = request();
-        // dd($_FILES);
+        $form_data['user_id'] = auth()->id;
         $file_data = file_request('image_arr');
-        //dd($file_data);
         //validation check start
         $field = [];
         foreach ($form_data as $key => $data) {
@@ -57,9 +53,6 @@ class StoriesController
             $uploadfile[] = $uploaddir . time() . '_' . basename($name);
         }
         $images = array_combine($file_data['tmp_name'], $uploadfile);
-        // dd($images);
-        // dd($uploadfile);
-        // dd(multi_file_upload($images));
 
         multi_file_upload($images);
 
@@ -81,13 +74,11 @@ class StoriesController
     public function edit()
     {
         $story = Story::fetch(['id' => request('id')]);
-        // dd($story);
         return view('stories/edit', compact('story'));
     }
 
     public function update()
     {
-        // dd(request());
         $file_data = file_request('image');
         if ($file_data) {
             //for file uploading start
@@ -107,7 +98,6 @@ class StoriesController
             'keywords' => request('keywords'),
             'image' => $uploadfile
         ], request('id'));
-        // dd($res);
 
         if ($res)
             redirect('stories/');
