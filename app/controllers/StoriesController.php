@@ -14,13 +14,15 @@ class StoriesController
     }
     public function show()
     {
+        // dd($_SESSION['current_user']->id);
         $article = Story::fetch(['id' => request('id')]);
+        //dd($article[0]->user_id);
         return view('stories/show', compact('article'));
     }
 
     public function create()
     {
-        // dd($_SESSION['current_user']);
+        // dd($_SESSION['current_user']->id);
         if (isset($_SESSION['current_user']) && !empty($_SESSION['current_user']))
             return view('stories/create');
         else
@@ -65,16 +67,33 @@ class StoriesController
     public function edit()
     {
         $story = Story::fetch(['id' => request('id')]);
+        // dd($story);
         return view('stories/edit', compact('story'));
     }
 
     public function update()
     {
+        // dd(request());
+        $file_data = file_request('image');
+        if ($file_data) {
+            //for file uploading start
+            $uploaddir = './public/storage/images/';
+            $uploadfile = $uploaddir . time() . '_' . basename($file_data['name']);
+            $form_data['image'] = $uploadfile;
+
+            file_upload($file_data['tmp_name'], $uploadfile);
+        }
         $res = Story::update([
             'title' => request('title'),
-            'excerpt' => request('excerpt'),
-            'body' => request('body')
+            'name' => request('name'),
+            'video' => request('video'),
+            'state' => request('state'),
+            'district' => request('district'),
+            'location' => request('location'),
+            'keywords' => request('keywords'),
+            'image' => $uploadfile
         ], request('id'));
+        // dd($res);
 
         if ($res)
             redirect('stories/');

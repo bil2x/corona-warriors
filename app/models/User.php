@@ -20,6 +20,7 @@ class User
     }
     public static function check($credential)
     {
+        // dd("select * from users where email='" . $credential['email'] . "' and password='" . $credential['password'] . "'");
 
         return App::get('database')->query("select * from users where email='" . $credential['email'] . "' and password='" . $credential['password'] . "'");
     }

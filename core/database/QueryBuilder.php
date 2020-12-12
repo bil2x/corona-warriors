@@ -67,7 +67,7 @@ class QueryBuilder
             }, array_keys($parameters))),
             $where
         );
-        //dd($sql);
+        // dd($sql);
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute($parameters);

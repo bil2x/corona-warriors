@@ -7,8 +7,9 @@
         </h1>
     </header>
     <div class="form-body">
-        <form action="/story/update" class="box" method="post" enctype="multipart/form-data">
+        <form action="/story/edit" class="box" method="post" enctype="multipart/form-data">
 
+            <input type="hidden" name="id" value="<?= $story[0]->id; ?>">
             <div class="control has-addon">
                 <span class="control-addon">
                     Name
@@ -28,7 +29,7 @@
                     Add Images* (Maximum 4 images / Press 'ctrl' button to select multiple images)
                 </span>
                 <input type="file" name="image" class="control-field">
-
+                <img src="/<?= $story[0]->image; ?>" alt="" width="125" height="75">
             </div>
             <div class="control has-addon">
                 <span class="control-addon">
