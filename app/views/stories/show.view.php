@@ -14,8 +14,8 @@
             <h2><?= $article[0]->title; ?></h2>
             <img src="<?= $article[0]->image; ?>" alt="" width="700" height="450">
             <?php
-            if (isset($_SESSION['current_user']) && !empty($_SESSION['current_user'])) {
-                if ($_SESSION['current_user']->id == $article[0]->user_id) {
+            if (auth()) {
+                if (auth()->id == $article[0]->user_id) {
             ?>
                     <a href="/story/edit?id=<?= $article[0]->id; ?>" class="btn">Update</a>
             <?php }

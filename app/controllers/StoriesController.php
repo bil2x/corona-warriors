@@ -21,7 +21,8 @@ class StoriesController
 
     public function create()
     {
-        if (isset($_SESSION['current_user']) && !empty($_SESSION['current_user']))
+        // dd(auth());
+        if (auth())
             return view('stories/create');
         else
             redirect('login');

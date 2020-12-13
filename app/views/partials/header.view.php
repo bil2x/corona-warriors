@@ -1,6 +1,6 @@
 <?php
-session_start();
-if (($page == 'Login') && (isset($_SESSION['current_user'])))
+// session_start();
+if (($page == 'Login') && (auth()))
     header('Location:/')
 
 ?>
