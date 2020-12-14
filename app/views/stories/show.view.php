@@ -9,15 +9,24 @@
     <div class="form-body">
 
         <div class="box">
-            <h3><?= $article[0]->name; ?></h3>
-            <p><?= date('F j,Y', strtotime($article[0]->created_at)); ?> <?= $article[0]->district; ?>, <?= $article[0]->state; ?></p>
-            <h2><?= $article[0]->title; ?></h2>
-            <img src="<?= $article[0]->image; ?>" alt="" width="700" height="450">
+            <h3><?= $story[0]->name; ?></h3>
+            <p><?= date('F j,Y', strtotime($story[0]->created_at)); ?> <?= $story[0]->district; ?>, <?= $story[0]->state; ?></p>
+            <h2><?= $story[0]->title; ?></h2>
+            <img src="<?= ltrim(getimage('story_id', $story[0]->id, 1)[0]->location ??= './public/images/default.webp', '.'); ?>" alt="" width="700" height="450">
+            <p>
+                <?php
+                $allImages = getimage('story_id', $story[0]->id);
+                //  dd($allImages);
+                foreach ($allImages as $image) {
+                ?>
+                    <img src="<?= ltrim($image->location, '.'); ?>" alt="100" width="75">
+                <?php } ?>
+            </p>
             <?php
             if (auth()) {
-                if (auth()->id == $article[0]->user_id) {
+                if (auth()->id == $story[0]->user_id) {
             ?>
-                    <a href="/story/edit?id=<?= $article[0]->id; ?>" class="btn">Update</a>
+                    <a href="/story/edit?id=<?= $story[0]->id; ?>" class="btn">Update</a>
             <?php }
             } ?>
         </div>

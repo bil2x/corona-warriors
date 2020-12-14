@@ -28,6 +28,17 @@ class QueryBuilder
             return $e->getMessage();
         }
     }
+    public function selectM($table, $field, $col, $val, $limit, $offset)
+    {
+        try {
+            //dd("select * from {$table} where {$col}={$val}");
+            $statement = $this->pdo->prepare("select `$field` from {$table} where {$col}='{$val}' limit $limit offset $offset");
+            $statement->execute();
+            return $statement->fetchAll(PDO::FETCH_CLASS);
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
     public function query($string)
     {
         //dd($string);

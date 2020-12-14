@@ -1,6 +1,7 @@
 <?php
 
 use App\Core\Request;
+use App\Core\App;
 
 function view($name, $data = [])
 {
@@ -50,4 +51,9 @@ function route()
 function auth()
 {
     return $_SESSION['current_user'];
+}
+
+function getimage($column, $value, $limit = 100, $offset = 0)
+{
+    return App::get('database')->selectM('images', 'location', $column, $value, $limit, $offset);
 }

@@ -14,7 +14,7 @@
         ?>
             <a href="/story?id=<?= $story->id; ?>">
                 <div class="item">
-                    <img src="<?= ltrim($story->image, '.'); ?>" alt="" width="200" height="250">
+                    <img src="<?= ltrim(getimage('story_id', $story->id, 1)[0]->location ??= './public/images/default.webp', '.'); ?>" alt="" width="200" height="250">
                     <p>Posted By <?= $story->name; ?></p>
                     <h2><?= $story->title; ?></h2>
                 </div>
