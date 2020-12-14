@@ -80,15 +80,6 @@ class StoriesController
 
     public function update()
     {
-        $file_data = file_request('image');
-        if ($file_data) {
-            //for file uploading start
-            $uploaddir = './public/storage/images/';
-            $uploadfile = $uploaddir . time() . '_' . basename($file_data['name']);
-            $form_data['image'] = $uploadfile;
-
-            file_upload($file_data['tmp_name'], $uploadfile);
-        }
         $res = Story::update([
             'title' => request('title'),
             'name' => request('name'),
@@ -97,7 +88,6 @@ class StoriesController
             'district' => request('district'),
             'location' => request('location'),
             'keywords' => request('keywords'),
-            'image' => $uploadfile
         ], request('id'));
 
         if ($res)

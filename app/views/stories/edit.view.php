@@ -24,13 +24,7 @@
                 <input type="text" name="title" class="control-field" placeholder="Title" value="<?= $story[0]->title; ?>">
 
             </div>
-            <div class="control has-addon">
-                <span class="control-addon">
-                    Add Images* (Maximum 4 images / Press 'ctrl' button to select multiple images)
-                </span>
-                <input type="file" name="image" class="control-field">
-                <img src="/<?= $story[0]->image; ?>" alt="" width="125" height="75">
-            </div>
+
             <div class="control has-addon">
                 <span class="control-addon">
                     Video URL (if any)
