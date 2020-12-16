@@ -2,12 +2,51 @@
 
 namespace App\Controllers;
 
-use App\Models\Admin\Users;
-use App\Models\Article;
+use App\Models\Image;
+use App\Models\User;
+use App\Models\Story;
 
 class AdminController
 {
+    public function index()
+    {
+        if (admin())
+            redirect('admin/dashboard');
+        return view('admin/index');
+    }
 
+    public function logincheck()
+    {
+
+        $email = request('email');
+        $pass = request('password');
+        if (($email == '') || ($pass == '')) {
+            return redirect('admin');
+        }
+        $res = User::check([
+            'email' => $email,
+            'password' => $pass
+        ]);
+        $privilege = $res[0]->role;
+        if (!isset($privilege)) {
+            $_SESSION['error']['message'] = 'Your email or password invalid';
+            return view('admin/index');
+        } elseif ($privilege) {
+            $_SESSION['error']['message'] = 'You don\'t have admin previlege';
+            return view('admin/index');
+        }
+        unset($_SESSION['error']);
+        $_SESSION['role'] = $privilege;
+        return redirect('admin/dashboard');
+    }
+
+    public function dashboard()
+    {
+        // dd($_SESSION);
+        if (!admin())
+            return redirect('admin');
+        return view('admin/dashboard');
+    }
     public function store()
     {
 
@@ -20,77 +59,69 @@ class AdminController
             return redirect('admin/users');
         //if validation pass go to model with data and encrypted password
         $password = base64_encode($password);
-        $addUser = Users::addUser(compact('name', 'password', 'email'));
+        $res = User::addUser(compact('name', 'password', 'email'));
 
-        //dd($addUser);
-        if ($addUser == 1) {
-            $users = Users::all();
-            //dd($users);
-            return view('admin/users', compact('users'));
-        }
-
-        //dd(request());
+        if ($res)
+            redirect('admin/users');
     }
 
 
-    public function login()
-    {
-
-        if (isset($_SESSION['id'])) {
-            redirect('admin/home');
-        }
-        return view('admin/admin');
-    }
-
-    public function logincheck()
-    {
-
-        $email = request('email');
-        $pass = request('password');
-
-        //dd($email);
-        if (($email == '') || ($pass == '')) {
-            return redirect('admin');
-        }
-        //  die('9++');
-
-        $_SESSION['id'] = 1;
-        redirect('admin/home');
-    }
-
-    public function index()
-    {
-        if (!isset($_SESSION['id'])) {
-            redirect('admin');
-        }
-        return view('admin/home');
-    }
     public function users()
     {
-        if (!isset($_SESSION['id'])) {
-            redirect('admin');
-        }
+        if (!admin())
+            return redirect('admin');
 
-        $users = Users::all();
+        $users = User::all();
         //dd($users);
         return view('admin/users', compact('users'));
     }
 
-
-    public function articles()
+    public function images()
     {
-        if (!isset($_SESSION['id'])) {
-            redirect('admin');
-        }
-        return view('admin/articles', [
-            'articles' => Article::all()
-        ]);
+        if (!admin())
+            return redirect('admin');
+
+        $images = Image::all();
+        //dd($users);
+        return view('admin/images', compact('images'));
     }
 
+    public function stories()
+    {
+        if (!admin())
+            return redirect('admin');
+        return view('admin/stories', [
+            'stories' => Story::all()
+        ]);
+    }
+    public function publish()
+    {
+        // dd(request('id'));
+        $res = Story::update([
+            'status' => 1
+        ], request('id'));
+        // dd($res);
+        if ($res)
+            redirect('admin/stories');
+    }
+    public function delete()
+    {
+        $res = Story::delete(request('id'));
+        if ($res)
+            redirect('admin/stories');
+    }
+    public function imagedelete()
+    {
+        // dd(request('id'));
+        $res = Image::delete(request('id'));
+        if ($res)
+            redirect('admin/images');
+    }
     public function logout()
     {
-        unset($_SESSION['id']);
+        // dd('logout');
+        unset($_SESSION['role']);
         session_destroy();
-        redirect('admin');
+        return redirect('admin');
     }
 }

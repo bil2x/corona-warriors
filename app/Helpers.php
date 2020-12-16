@@ -57,3 +57,7 @@ function getimage($column, $value, $limit = 100, $offset = 0)
 {
     return App::get('database')->selectM('images', 'location', $column, $value, $limit, $offset);
 }
+function admin()
+{
+    return !$_SESSION['role'] ??= 1;
+}

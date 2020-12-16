@@ -25,16 +25,20 @@ $router->post('story/edit', 'StoriesController@update');
 $router->get('story/delete', 'StoriesController@destroy');
 
 // Admin Panel Routes
-$router->get('admin', 'AdminController@login');
+$router->get('admin', 'AdminController@index');
 $router->post('admin', 'AdminController@logincheck');
 $router->get('admin/logout', 'AdminController@logout');
 
-$router->get('admin/home', 'AdminController@index');
+$router->get('admin/dashboard', 'AdminController@dashboard');
 
 $router->get('admin/users', 'AdminController@users');
 $router->post('admin/users', 'AdminController@store');
 
-$router->get('admin/articles', 'AdminController@articles');
+$router->get('admin/stories', 'AdminController@stories');
+$router->get('admin/publish', 'AdminController@publish');
+$router->get('admin/delete', 'AdminController@delete');
+$router->get('admin/images', 'AdminController@images');
+$router->get('admin/images/delete', 'AdminController@imagedelete');
 
 
 //dd($router);

@@ -20,9 +20,7 @@ class User
     }
     public static function check($credential)
     {
-        // dd("select * from users where email='" . $credential['email'] . "' and password='" . $credential['password'] . "'");
-
-        return App::get('database')->query("select * from users where email='" . $credential['email'] . "' and password='" . $credential['password'] . "'");
+        return App::get('database')->query("select * from users where email='" . $credential['email'] . "' and password='" . base64_encode($credential['password']) . "'");
     }
     public static function resetAttempt($email)
     {
@@ -35,5 +33,9 @@ class User
             dd($mailResponse);
             $_SESSION['success']['message'] = 'Password reset link sent to your email address';
         }
+    }
+    public static function addUser($data)
+    {
+        return App::get('database')->insert('users', $data);
     }
 }

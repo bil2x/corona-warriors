@@ -6,10 +6,10 @@ use App\Core\App;
 
 class Image
 {
-    // public static function all()
-    // {
-    //     return App::get('database')->selectAll('stories');
-    // }
+    public static function all()
+    {
+        return App::get('database')->selectAll('images');
+    }
 
     // public static function fetch(array $col)
     // {
@@ -33,4 +33,8 @@ class Image
     // {
     //     return App::get('database')->delete('stories', $id);
     // }
+    public static function delete($id)
+    {
+        return App::get('database')->delete('images', $id);
+    }
 }

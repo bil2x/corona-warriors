@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/admin.css">
-    <title>Document</title>
+    <title>Admin Login</title>
 </head>
 
 <body>
     <div class="center-location">
-        <form action="admin" class="box" method="post">
+        <form action="/admin" class="box" method="post">
             <h2>Welcome to Admin</h1>
                 <div class="control">
                     <input type="email" name="email" placeholder="Email Address" required>

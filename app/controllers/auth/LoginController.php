@@ -39,6 +39,7 @@ class LoginController
 			return redirect('register');
 		}
 		$res = User::check($form_data);
+		// dd($res);
 		if (empty($res)) {
 			$_SESSION['error']['message'] = 'Your email or password invalid';
 			return redirect('login');

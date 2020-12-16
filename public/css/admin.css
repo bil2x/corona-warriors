@@ -12,6 +12,14 @@ body{
     align-items: center;
     justify-content: center;
 }
+a {
+	text-decoration:none;
+	color:inherit;	
+}
+/* a:hover{
+	text-decoration: underline;
+	font-weight: 600;
+} */
 .active{
     font-weight: bold;
 }
@@ -51,8 +59,9 @@ body{
 }
 .admin-container header,footer{
     background-color: #5D79FF;
-    height: 40px;
+    /* height: 40px; */
     padding-top: 15px;
+    padding-bottom:15px;
     text-align: center;
     color: white;
 }
@@ -141,3 +150,9 @@ body{
 .table thead,tbody tr:nth-child(even){background-color: #f2f2f2;}
 
 .table thead,tbody tr:hover {background-color: #ddd;}
+.img{
+    display:flex;
+}
+.img p{
+    padding: 0 10px;
+}

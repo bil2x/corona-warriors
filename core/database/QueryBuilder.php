@@ -10,7 +10,7 @@ class QueryBuilder
     public function selectAll($table)
     {
         try {
-            $statement = $this->pdo->prepare("select * from {$table} order by `created_at` desc");
+            $statement = $this->pdo->prepare("select * from {$table}");
             $statement->execute();
         } catch (PDOException $e) {
             return $e->getmessage();
