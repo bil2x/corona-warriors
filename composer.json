@@ -1,4 +1,6 @@
 {
+    "name": "anindya/nielit",
+    "description": "Simple CRUD Project",
     "autoload": {
         "classmap": [
             "./"
