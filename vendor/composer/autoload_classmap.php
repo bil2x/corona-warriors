@@ -15,7 +15,6 @@ return array(
     'App\\Core\\App' => $baseDir . '/core/App.php',
     'App\\Core\\Request' => $baseDir . '/core/Request.php',
     'App\\Core\\Router' => $baseDir . '/core/Router.php',
-    'App\\Models\\Admin\\Users' => $baseDir . '/app/models/admin/Users.php',
     'App\\Models\\Image' => $baseDir . '/app/models/Image.php',
     'App\\Models\\Story' => $baseDir . '/app/models/Story.php',
     'App\\Models\\User' => $baseDir . '/app/models/User.php',

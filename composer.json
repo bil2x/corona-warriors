@@ -4,7 +4,7 @@
             "./"
         ],
         "files": [
-            "app/Helpers.php"
+            "app/helpers.php"
         ]
     }
 }
