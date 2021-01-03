@@ -1,6 +1,4 @@
-<?php
-require('includes/header.view.php');
-?>
+<?php require(dirname(__DIR__) . '/includes/header.view.php'); ?>
 <div class="right-side center-addon">
 
     <div class='table-list'>
@@ -11,6 +9,7 @@ require('includes/header.view.php');
                     <th>No.</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,37 +25,14 @@ require('includes/header.view.php');
                             <td><?= $count; ?></td>
                             <td><?= $user->name; ?></td>
                             <td><?= $user->email; ?></td>
+                            <td>View|Delete</td>
                         </tr>
                 <?php endforeach;
                 } ?>
             </tbody>
         </table>
-    </div>
-    <div class="form-location">
-        <form action="users" class="box" method="post">
-            <div>
-                <h2>Add Users</h2>
-                <div class="control">
-                    <input type="text" name="name" placeholder="Name" required>
-                </div>
-
-                <div class="control">
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-
-                <div class="control">
-                    <input type="password" name="password" placeholder="Password" required>
-                </div>
-
-                <div class="control">
-                    <input type="submit" name="submit" value="Submit" class="primary-button">
-                </div>
-            </div>
-
-        </form>
+        <h4 style="text-align: right;"><a href="/admin/users/create">Add User</a>
+        </h4>
     </div>
 </div>
-</div>
-<?php
-require('includes/footer.view.php');
-?>
+<?php require(dirname(__DIR__) . '/includes/footer.view.php'); ?>

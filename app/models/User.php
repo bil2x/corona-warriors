@@ -16,7 +16,7 @@ class User
     public static function all()
     {
         //dd('model');
-        return App::get('database')->selectAll('users');
+        return App::get('database')->select('users', 'role', 1);
     }
     public static function check($credential)
     {
