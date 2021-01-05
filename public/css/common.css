@@ -1,0 +1,30 @@
+
+        .overlay {
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background: rgb(0, 0, 0, .3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .overlay:target {
+            visibility: visible;
+        }
+
+        .overlay .cancel {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        .overlay .modal {
+            position: relative;
+            background: beige;
+            padding: 1em 2em;
+        }
