@@ -13,19 +13,19 @@
                 <span class="control-addon">
                     Name
                 </span>
-                <input type="text" name="name" class="control-field" placeholder="name">
+                <input type="text" name="name" class="control-field" placeholder="Name">
 
             </div>
             <div class="control has-addon">
                 <span class="control-addon">
                     Story Title
                 </span>
-                <input type="text" name="title" class="control-field" placeholder="Title">
+                <input type="text" name="title" class="control-field" placeholder="Story Title">
 
             </div>
             <div class="control has-addon">
                 <span class="control-addon">
-                    Add Images* (Maximum 4 images / Press 'ctrl' button to select multiple images)
+                    Add Images* (Press 'ctrl' button to select multiple images)
                 </span>
                 <input type="file" name="image_arr[]" class="control-field" multiple>
 

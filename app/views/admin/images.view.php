@@ -3,11 +3,7 @@ require('includes/header.view.php');
 ?>
 
 <div class="right-side">
-    <div>
-        <p><img src="/public/images/banner.jpg" alt="" class="image image-full" width="700px" /> </p>
-    </div>
     <h1>All Images will display here</h1>
-    <h2>Admin can remove images</h2>
     <div class="img">
         <?php
         foreach ($images as $image) :
@@ -21,7 +17,6 @@ require('includes/header.view.php');
     </div>
 
 
-</div>
 </div>
 <?php
 require('includes/footer.view.php');

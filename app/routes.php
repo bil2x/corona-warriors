@@ -31,8 +31,9 @@ $router->get('admin/logout', 'AdminController@logout');
 
 $router->get('admin/dashboard', 'AdminController@dashboard');
 
-$router->get('admin/users', 'AdminController@users');
-$router->post('admin/users', 'AdminController@store');
+$router->get('admin/users', 'UsersController@users');
+$router->get('admin/users/create', 'UsersController@create');
+$router->post('admin/users/create', 'UsersController@store');
 
 $router->get('admin/stories', 'AdminController@stories');
 $router->get('admin/publish', 'AdminController@publish');

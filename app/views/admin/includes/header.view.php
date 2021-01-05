@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../public/css/admin.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css" integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/public/css/admin.css">
+    <link rel="stylesheet" href="/public/css/all.css">
     <title>Admin Panel</title>
 </head>
 
@@ -22,14 +22,17 @@
                 <nav>
                     <ul>
 
-                        <li class="list-item <?php if (route() == 'admin/dashboard') echo 'active' ?>">
-                            <a href="/admin/dashboard">Dashboard</a>
+                        <li class="list-item">
+                            <a href="/admin/dashboard" class=" <?php if (route() == 'admin/dashboard') echo 'active' ?>"><i class="fas fa-house-user"></i>&nbsp;Dashboard</a>
                         </li>
-                        <li class="list-item <?php if (route() == 'admin/users') echo 'active' ?>"">
-                            <a href="/admin/users">Users </a> </li> <li class="list-item <?php if (route() == 'admin/stories') echo 'active' ?>"">
-                            <a href="/admin/stories">Stories </a> </li> <li class="list-item <?php if (route() == 'admin/images') echo 'active' ?>"">
-                            <a href="/admin/images">Images </a> </li> <li class="list-item">
-                            <a href="logout">Logout</a>
+                        <li class="list-item">
+                            <a href="/admin/users" class="<?php if (route() == 'admin/users') echo 'active' ?>"> <i class="fas fa-users"></i>&nbsp;Users </a> </li>
+                        <li class="list-item">
+                            <a href="/admin/stories" class=" <?php if (route() == 'admin/stories') echo 'active' ?>"> <i class="fas fa-industry"></i>&nbsp;Stories </a> </li>
+                        <li class="list-item">
+                            <a href="/admin/images" class=" <?php if (route() == 'admin/images') echo 'active' ?>"> <i class="fas fa-images"></i>&nbsp;Images </a> </li>
+                        <li class="list-item">
+                            <a href="logout"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                         </li>
                     </ul>
                 </nav>

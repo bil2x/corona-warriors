@@ -11,12 +11,13 @@ class ComposerStaticInite0f7e1dba682b8816619c7c3c38c5805
     );
 
     public static $classMap = array (
-        'App\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/controllers/AdminController.php',
+        'App\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/controllers/admin/AdminController.php',
         'App\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/controllers/auth/LoginController.php',
         'App\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/controllers/auth/RegisterController.php',
         'App\\Controllers\\Auth\\ResetController' => __DIR__ . '/../..' . '/app/controllers/auth/ResetController.php',
         'App\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/controllers/HomeController.php',
         'App\\Controllers\\StoriesController' => __DIR__ . '/../..' . '/app/controllers/StoriesController.php',
+        'App\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/controllers/admin/UsersController.php',
         'App\\Core\\App' => __DIR__ . '/../..' . '/core/App.php',
         'App\\Core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'App\\Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
