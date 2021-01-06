@@ -12,6 +12,7 @@ if (($page == 'Login') && (auth()))
     <link rel="shortcut icon" href="/public/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/public/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/common.css">
 </head>
 
 <body>
